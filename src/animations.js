@@ -89,5 +89,5 @@ function handleSwipe() {
 
 //whatsapp//////////////////
 btnContact.addEventListener("click", function () {
-  window.open("https://wa.me/56947545787", "_blank");
+  window.open("https://wa.me/56947545878", "_blank");
 });
