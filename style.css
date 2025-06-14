@@ -1,0 +1,261 @@
+/* General */
+* { box-sizing: border-box; }
+
+:root {
+  --base-color: #EEEEEE;
+  --purple-medium-1: #D4BEE4;
+  --purple-medium-2: #9B7EBD;
+  --purple-dark-1: #3B1E54;
+  --dark: #18071a;
+
+  --yellow: #EECC75;
+  --green: #CAD297;
+  --aqua: #B7EAC5;
+  --lightBlue: #A2EEE5;
+  
+  --red: #F09D9D;
+
+  --font-family-titles: "Lilita One", sans-serif;
+  --font-family-text: 'Red Hat Display', sans-serif;
+  --font-weight-title1: 800;
+  --font-weight-title2: 700;
+  --font-weight-text1: 400;
+  --font-weight-text2: 500;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+  font-size: 24px;
+  color: var(--purple-dark-1);
+  font-family: var(--font-family-titles);
+  font-weight: var(--font-weight-title1);
+  margin: 0;
+  padding: 0;
+}
+h2{
+  font-size: 20px;
+  color: var(--dark);
+  font-family: var(--font-family-titles);
+  font-weight: var(--font-weight-title2);
+  margin: 0;
+  padding: 0;
+}
+h3{
+  font-size: 16px;
+  color: var(--dark);
+  font-family: var(--font-family-titles);
+  font-weight: var(--font-weight-title2);
+  margin: 0;
+  padding: 0;
+}
+/*/////////////////////////////////////////////////////*/
+
+.mainPage-two {
+  position: fixed;         /* Para que no extienda el tamaño de la página */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;           /* Todo el alto visible */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--purple-medium-2);
+  z-index: 9999;
+  transform: translateX(200%); /* Fuera de pantalla */
+  transition: transform 1s ease;
+}
+
+.topBar {
+  height: 10%;             /* Ocupa el 10% de la pantalla */
+  display: flex;
+  align-items: center;
+  padding: 0 4%;
+  justify-content: flex-start;
+}
+
+.topBar h1 {
+  margin-left: 16px;
+  color: var(--base-color);
+  -webkit-text-stroke: 1px var(--purple-dark-1);
+}
+
+.backOption {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.backOption svg {
+  height: 60%;
+  width: auto;
+  cursor: pointer;
+}
+
+.loginPanel {
+  height: 80%;              /* Ocupa el 80% de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.loginPanel h1{
+  margin-bottom: 40px;
+  color: var(--base-color);
+}
+
+.loginPanel form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.loginPanel input, 
+.loginPanel button {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.loginPanel input {
+  background-color: var(--base-color);
+  color: var(--dark);
+}
+
+.loginPanel button {
+  background-color: var(--dark);
+  color: var(--base-color);
+  cursor: pointer;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.mainPage-title{
+    height: 20%;
+    margin: 1vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    transition: transform 1s ease;
+}
+.mainPage-title h1{
+    margin: 1vw;
+}
+
+.mainPage-buttons{
+    height: 70%;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease;
+}
+
+.mainPage-buttons div{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height:90%;
+    background-color: var(--purple-medium-1);
+    margin: 4vw;
+    border: 4px solid black;
+    border-radius:10%;
+    border-color: var(--dark);
+    box-shadow: 8px -8px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+.mainPage-buttons div:hover{
+   transform: scale(1.05);
+    box-shadow: 12px -12px 8px rgba(0, 0, 0, 0.25);
+}
+
+.mainPage-buttons svg{
+    width: 60%;
+    height: 60%;
+}
+
+.mainPage-contact {
+  position: fixed;
+  bottom: 2vh;           /* Separación del borde inferior */
+  right: 2vw;             /* Separación del borde izquierdo */
+  width: 10vw;           /* Tamaño relativo a la pantalla */
+  height: 10vw;          /* Igual al ancho para que sea un círculo */
+  max-width: 80px;       /* Límite máximo en pantallas grandes */
+  max-height: 80px;
+  min-width: 48px;       /* Límite mínimo en pantallas pequeñas */
+  min-height: 48px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainPage-contact div {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--purple-medium-1);
+  box-shadow: 8px -8px 8px rgba(0, 0, 0, 0.25);
+  border: 3px solid var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mainPage-contact div:hover {
+  transform: scale(1.05);
+  box-shadow: 12px -12px 8px rgba(0, 0, 0, 0.25);
+}
+
+.mainPage-contact svg {
+  width: 60%;
+  height: 60%;
+}
+
+.moveRight{
+    transform: translateX(-200%);
+}
+.moveLeft{
+    transform: translateX(200%);
+}
+
+@media (max-width: 550px) {
+  .mainPage-buttons{
+    flex-direction: column;
+  }
+  .mainPage-buttons div{
+    width: 40%;
+  }
+
+}
+
+.inactive{
+    display: none;
+}
+
+.active {
+  transform: translateX(0); /* Se muestra */
+}
+
